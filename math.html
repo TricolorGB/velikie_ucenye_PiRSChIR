@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Великие математики</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><i class="fas fa-calculator"></i> Великие математики</h1>
+            <p>Гении, которые изменили мир чисел и формул</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Главная</a></li>
+                <li><a href="math.html" class="active"><i class="fas fa-calculator"></i> Математика</a></li>
+                <li><a href="physics.html"><i class="fas fa-atom"></i> Физика</a></li>
+                <li><a href="it.html"><i class="fas fa-laptop-code"></i> Информационные технологии</a></li>
+                <li><a href="biology.html"><i class="fas fa-dna"></i> Биология</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <section class="intro">
+                <h2>Математика - царица наук</h2>
+                <p>Математика — фундаментальная наука, предоставляющая языки описания и методы анализа для многих других наук. Великие математики не только решали сложные проблемы, но и создавали новые области исследований, которые до сих пор влияют на наше понимание мира.</p>
+            </section>
+
+            <div class="disciplines-grid">
+                <!-- Карточка ученого 1 -->
+                <div class="discipline-card">
+                    <div class="card-icon"> <i class="fas fa-square-root-alt"></i> </div>
+                    <h3>Исаак Ньютон</h3>
+                    <p>Английский физик, математик и астроном, один из создателей классической физики и математического анализа.</p>
+                    <div class="scientists-list">
+                        <h4>Основные достижения:</h4>
+                        <ul>
+                            <li>Дифференциальное и интегральное исчисления</li>
+                            <li>Законы движения и закон всемирного тяготения</li>
+                            <li>Бином Ньютона</li>
+                        </ul>
+                    </div>
+                    <a href="https://ru.wikipedia.org/wiki/%D0%9D%D1%8C%D1%8E%D1%82%D0%BE%D0%BD,_%D0%98%D1%81%D0%B0%D0%B0%D0%BA" class="btn" onclick="showScientist('newton')">Подробнее <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Карточка ученого 2 -->
+                <div class="discipline-card">
+                    <div class="card-icon"> <i class="fas fa-infinity"></i> </div>
+                    <h3>Карл Фридрих Гаусс</h3>
+                    <p>Немецкий математик, астроном и физик, считается одним из величайших математиков всех времён.</p>
+                    <div class="scientists-list">
+                        <h4>Основные достижения:</h4>
+                        <ul>
+                            <li>Теория чисел</li>
+                            <li>Гауссова кривизна</li>
+                            <li>Метод наименьших квадратов</li>
+                        </ul>
+                    </div>
+                    <a href="https://ru.wikipedia.org/wiki/%D0%93%D0%B0%D1%83%D1%81%D1%81,_%D0%9A%D0%B0%D1%80%D0%BB_%D0%A4%D1%80%D0%B8%D0%B4%D1%80%D0%B8%D1%85" class="btn" onclick="showScientist('gauss')">Подробнее <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Карточка ученого 3 -->
+                <div class="discipline-card">
+                    <div class="card-icon"> <i class="fas fa-laptop-code"></i> </div>
+                    <h3>Ада Лавлейс</h3>
+                    <p>Английский математик, первая программистка в истории, создательница первого алгоритма для аналитической машины.</p>
+                    <div class="scientists-list">
+                        <h4>Основные достижения:</h4>
+                        <ul>
+                            <li>Первый алгоритм для вычислительной машины</li>
+                            <li>Работа с аналитической машиной Бэббиджа</li>
+                            <li>Предвидение возможностей компьютеров</li>
+                        </ul>
+                    </div>
+                    <a href="https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D0%B2%D0%BB%D0%B5%D0%B9%D1%81,_%D0%90%D0%B4%D0%B0" class="btn" onclick="showScientist('lovelace')">Подробнее <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Интерактивный раздел для математики -->
+<section class="interactive-section">
+    <h2><i class="fas fa-function"></i> Математическая лаборатория: Графический калькулятор</h2>
+    <p>Постройте график функции и изучите её свойства. Введите функцию в формате JavaScript (например: Math.sin(x) или x*x).</p>
+    
+    <div class="calculator-container">
+        <div class="calculator-controls">
+            <div class="input-group">
+                <label for="function-input">Функция f(x) = </label>
+                <input type="text" id="function-input" value="Math.sin(x)" placeholder="Введите функцию">
+                <button id="plot-function" class="btn"><i class="fas fa-chart-line"></i> Построить график</button>
+            </div>
+            
+            <div class="function-presets">
+                <p>Примеры функций:</p>
+                <button class="preset-btn" data-func="Math.sin(x)">sin(x)</button>
+                <button class="preset-btn" data-func="Math.cos(x)">cos(x)</button>
+                <button class="preset-btn" data-func="x*x">x²</button>
+                <button class="preset-btn" data-func="Math.sqrt(Math.abs(x))">√|x|</button>
+                <button class="preset-btn" data-func="Math.log(Math.abs(x)+1)">ln(|x|+1)</button>
+            </div>
+            
+            <div class="graph-controls">
+                <div class="slider-container">
+                    <label for="x-range">Диапазон X: <span id="x-range-value">[-10, 10]</span></label>
+                    <input type="range" id="x-range" min="5" max="20" step="1" value="10">
+                </div>
+                
+                <div class="slider-container">
+                    <label for="y-range">Диапазон Y: <span id="y-range-value">[-5, 5]</span></label>
+                    <input type="range" id="y-range" min="3" max="10" step="1" value="5">
+                </div>
+            </div>
+        </div>
+        
+        <div class="graph-container">
+            <canvas id="math-graph" width="800" height="400"></canvas>
+            <div class="graph-info" id="graph-info">
+                <p>Ожидание ввода функции...</p>
+            </div>
+        </div>
+        
+        <div class="math-info">
+            <h3><i class="fas fa-calculator"></i> Математические понятия</h3>
+            <p>На графике вы можете наблюдать:</p>
+            <ul>
+                <li><strong>Область определения</strong> - значения X, для которых функция определена</li>
+                <li><strong>Область значений</strong> - все возможные значения Y</li>
+                <li><strong>Нули функции</strong> - точки пересечения с осью X</li>
+                <li><strong>Экстремумы</strong> - максимумы и минимумы функции</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+            <div class="back-to-home">
+                <a href="index.html" class="btn back-btn"><i class="fas fa-arrow-left"></i> Вернуться на главную</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Сайт "Великие ученые" &copy; 2024. Все права защищены.</p>
+            <p>Материалы сайта предназначены для образовательных целей.</p>
+            <div class="footer-links">
+                <a href="#"><i class="fab fa-github"></i> GitHub</a>
+                <a href="#"><i class="fas fa-envelope"></i> Контакты</a>
+                <a href="#"><i class="fas fa-info-circle"></i> О проекте</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Иформация об ученом
+        function showScientist(scientistId) {
+            const scientists = {
+                newton: {
+                    name: "Исаак Ньютон",
+                    years: "1643-1727",
+                    country: "Англия",
+                    achievements: [
+                        "Создатель дифференциального и интегрального исчислений",
+                        "Сформулировал законы движения и закон всемирного тяготения",
+                        "Разработал теорию цвета",
+                        "Построил первый зеркальный телескоп"
+                    ],
+                    facts: [
+                        "Родился в год смерти Галилея",
+                        "Был членом парламента Англии",
+                        "Возглавлял Королевское научное общество",
+                        "Писал работы по алхимии и теологии"
+                    ],
+                    quote: "Если я видел дальше других, то потому, что стоял на плечах гигантов."
+                },
+                gauss: {
+                    name: "Карл Фридрих Гаусс",
+                    years: "1777-1855",
+                    country: "Германия",
+                    achievements: [
+                        "Король математики",
+                        "Основоположник современной теории чисел",
+                        "Создатель метода наименьших квадратов",
+                        "Внес вклад в геометрию, астрономию и физику"
+                    ],
+                    facts: [
+                        "В 3 года исправил ошибку в расчетах отца",
+                        "В 19 лет доказал возможность построения правильного 17-угольника",
+                        "Работал в обсерватории Гёттингена",
+                        "Его портрет был на немецкой банкноте в 10 марок"
+                    ],
+                    quote: "Математика — царица наук, арифметика — царица математики."
+                },
+                lovelace: {
+                    name: "Ада Лавлейс",
+                    years: "1815-1852",
+                    country: "Англия",
+                    achievements: [
+                        "Первая программистка в истории",
+                        "Создала первый алгоритм для аналитической машины",
+                        "Предсказала возможности компьютеров за столетие до их появления",
+                        "Ввела понятия циклов и рабочих ячеек"
+                    ],
+                    facts: [
+                        "Дочь поэта Джорджа Байрона",
+                        "Работала с Чарльзом Бэббиджем над аналитической машиной",
+                        "Её именем назван язык программирования Ada",
+                        "День Ады Лавлейс отмечается во второй вторник октября"
+                    ],
+                    quote: "Аналитическая машина не претендует на создание чего-либо. Она может выполнить всё, что мы умеем ей предписать."
+                }
+            };
+
+            const scientist = scientists[scientistId];
+            if (!scientist) return;
+
+            // Модальное окно с информацией об ученом
+            const modalHTML = `
+                <div class="modal" id="scientist-modal" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); display:flex; justify-content:center; align-items:center; z-index:2000;">
+                    <div style="background:white; border-radius:10px; padding:2rem; max-width:800px; width:90%; max-height:90vh; overflow-y:auto;">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem;">
+                            <h2 style="color:#1a237e; margin:0;">${scientist.name}</h2>
+                            <button onclick="closeModal()" style="background:none; border:none; font-size:1.5rem; cursor:pointer; color:#666;">&times;</button>
+                        </div>
+                        
+                        <div style="display:grid; grid-template-columns:1fr 2fr; gap:2rem; margin-bottom:1.5rem;">
+                            <div>
+                                <div style="background:#e8eaf6; border-radius:8px; padding:1.5rem; text-align:center; height:100%; display:flex; flex-direction:column; justify-content:center;">
+                                    <i class="fas fa-user" style="font-size:4rem; color:#3949ab; margin-bottom:1rem;"></i>
+                                    <h3 style="color:#1a237e; margin-bottom:0.5rem;">${scientist.name}</h3>
+                                    <p><strong>Годы жизни:</strong> ${scientist.years}</p>
+                                    <p><strong>Страна:</strong> ${scientist.country}</p>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 style="color:#3949ab; margin-bottom:0.8rem;">Основные достижения:</h3>
+                                <ul style="list-style-position:inside; margin-bottom:1.5rem;">
+                                    ${scientist.achievements.map(ach => `<li>${ach}</li>`).join('')}
+                                </ul>
+                                
+                                <h3 style="color:#3949ab; margin-bottom:0.8rem;">Интересные факты:</h3>
+                                <ul style="list-style-position:inside; margin-bottom:1.5rem;">
+                                    ${scientist.facts.map(fact => `<li>${fact}</li>`).join('')}
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div style="background:#e3f2fd; padding:1.5rem; border-radius:8px; margin-top:1rem;">
+                            <i class="fas fa-quote-left" style="color:#3949ab; margin-right:0.5rem;"></i>
+                            <em>${scientist.quote}</em>
+                        </div>
+                        
+                        <div style="text-align:center; margin-top:1.5rem;">
+                            <button onclick="closeModal()" class="btn" style="background-color:#5c6bc0;">Закрыть</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            // Добавляем модальное окно в документ
+            const modalContainer = document.createElement('div');
+            modalContainer.innerHTML = modalHTML;
+            document.body.appendChild(modalContainer.firstChild);
+
+            // Добавляем функцию закрытия в глобальную область видимости
+            window.closeModal = function() {
+                const modal = document.getElementById('scientist-modal');
+                if (modal) {modal.remove();}
+            };
+
+            // Закрытие по клику вне модального окна
+            document.getElementById('scientist-modal').addEventListener('click', function(e) {
+                if (e.target === this) {closeModal();}
+            });
+        }
+    </script>
+    <script src="script.js"></script>
+    <script src="interactive.js"></script>
+</body>
+</html>

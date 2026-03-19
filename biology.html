@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Великие биологи</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .biology-theme {
+            --primary-color: #2e7d32;
+            --secondary-color: #43a047;
+            --accent-color: #c8e6c9;
+        }
+        .card-icon i {
+            background-color: #e8f5e9 !important;
+        }
+    </style>
+
+</head>
+<body class="biology-theme">
+    <header>
+        <div class="container">
+            <h1><i class="fas fa-dna"></i> Великие биологи</h1>
+            <p>Исследователи тайн жизни и разнообразия живого мира</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Главная</a></li>
+                <li><a href="math.html"><i class="fas fa-calculator"></i> Математика</a></li>
+                <li><a href="physics.html"><i class="fas fa-atom"></i> Физика</a></li>
+                <li><a href="it.html"><i class="fas fa-laptop-code"></i> Информационные технологии</a></li>
+                <li><a href="biology.html" class="active"><i class="fas fa-dna"></i> Биология</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+
+            <section class="intro">
+                <h2>Биология - наука о живом</h2>
+                <p>Биология изучает происхождение, развитие, строение и функционирование живых организмов. Великие биологи раскрыли фундаментальные принципы жизни, от механизмов наследственности до эволюции видов, заложив основы современной медицины, генетики и экологии.</p>
+            </section>
+
+            <div class="disciplines-grid">
+                <!-- Карточка ученого 1 -->
+                <div class="discipline-card">
+                    <div class="card-icon"> <i class="fas fa-dove"></i> </div>
+                    <h3>Чарльз Дарвин</h3>
+                    <p>Английский натуралист и путешественник, основоположник теории эволюции путем естественного отбора.</p>
+                    <div class="scientists-list">
+                        <h4>Основные достижения:</h4>
+                        <ul>
+                            <li>Теория эволюции</li>
+                            <li>Естественный отбор</li>
+                            <li>Происхождение видов</li>
+                        </ul>
+                    </div>
+                    <a href="https://ru.wikipedia.org/wiki/%D0%94%D0%B0%D1%80%D0%B2%D0%B8%D0%BD,_%D0%A7%D0%B0%D1%80%D0%BB%D0%B7" class="btn" onclick="showScientist('darwin')">Подробнее <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Карточка ученого 2 -->
+                <div class="discipline-card">
+                    <div class="card-icon"> <i class="fas fa-seedling"></i> </div>
+                    <h3>Грегор Мендель</h3>
+                    <p>Австрийский биолог и ботаник, основоположник учения о наследственности (менделизм).</p>
+                    <div class="scientists-list">
+                        <h4>Основные достижения:</h4>
+                        <ul>
+                            <li>Законы наследственности</li>
+                            <li>Основы генетики</li>
+                            <li>Эксперименты с горохом</li>
+                        </ul>
+                    </div>
+                    <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%BD%D0%B4%D0%B5%D0%BB%D1%8C,_%D0%93%D1%80%D0%B5%D0%B3%D0%BE%D1%80_%D0%98%D0%BE%D0%B3%D0%B0%D0%BD%D0%BD" class="btn" onclick="showScientist('mendel')">Подробнее <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Карточка ученого 3 -->
+                <div class="discipline-card">
+                    <div class="card-icon">  <i class="fas fa-microscope"> </i> </div>
+                    <h3>Розалинд Франклин</h3>
+                    <p>Британский биофизик и учёный-рентгенограф, внесшая вклад в изучение структуры ДНК.</p>
+                    <div class="scientists-list">
+                        <h4>Основные достижения:</h4>
+                        <ul>
+                            <li>Рентгенограмма ДНК</li>
+                            <li>Исследование структуры вирусов</li>
+                            <li>Изучение угля и графита</li>
+                        </ul>
+                    </div>
+                    <a href="https://ru.wikipedia.org/wiki/%D0%A4%D1%80%D0%B0%D0%BD%D0%BA%D0%BB%D0%B8%D0%BD,_%D0%A0%D0%BE%D0%B7%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4" class="btn" onclick="showScientist('franklin')">Подробнее <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Интерактивный раздел для биологии -->
+<section class="interactive-section">
+    <h2><i class="fas fa-dna"></i> Биологическая лаборатория: Модель ДНК и эволюции</h2>
+    <p>Изучите структуру ДНК и принципы эволюции. Создайте свою собственную последовательность ДНК и наблюдайте за мутациями!</p>
+    
+    <div class="biology-lab-container">
+        <div class="dna-section">
+            <h3><i class="fas fa-dna"></i> Конструктор ДНК</h3>
+            <p>Создайте последовательность ДНК, выбирая нуклеотиды:</p>
+            
+            <div class="dna-controls">
+                <div class="nucleotide-buttons">
+                    <button class="nuc-btn" data-nucleotide="A">Аденин (A)</button>
+                    <button class="nuc-btn" data-nucleotide="T">Тимин (T)</button>
+                    <button class="nuc-btn" data-nucleotide="C">Цитозин (C)</button>
+                    <button class="nuc-btn" data-nucleotide="G">Гуанин (G)</button>
+                    <button id="clear-dna" class="btn"><i class="fas fa-trash"></i> Очистить</button>
+                    <button id="random-dna" class="btn"><i class="fas fa-random"></i> Случайная ДНК</button>
+                </div>
+                
+                <div class="dna-sequence-display">
+                    <div class="dna-strand" id="dna-strand">
+                        <!-- ДНК последовательность-->
+                        <div class="empty-dna"> <p>ДНК последовательность пуста. Добавьте нуклеотиды!</p> </div>
+                    </div>
+                    <div class="dna-info">
+                        <p>Длина: <span id="dna-length">0</span> нуклеотидов</p>
+                        <p>Состав: A: <span id="count-A">0</span>, T: <span id="count-T">0</span>, 
+                            C: <span id="count-C">0</span>, G: <span id="count-G">0</span></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="dna-visualization">
+                <h4>Визуализация двойной спирали ДНК</h4>
+                <canvas id="dna-canvas" width="800" height="200"></canvas>
+            </div>
+        </div>
+        
+        <div class="evolution-section">
+            <h3><i class="fas fa-frog"></i> Симулятор эволюции</h3>
+            <p>Наблюдайте за эволюцией виртуальных существ под действием естественного отбора.</p>
+            
+            <div class="evolution-controls">
+                <button id="start-evolution" class="btn"><i class="fas fa-play"></i> Запустить эволюцию</button>
+                <button id="pause-evolution" class="btn"><i class="fas fa-pause"></i> Пауза</button>
+                <button id="reset-evolution" class="btn"><i class="fas fa-stop"></i> Сбросить</button>
+                
+                <div class="evolution-params">
+                    <div class="slider-container">
+                        <label for="mutation-rate">Частота мутаций: <span id="mutation-value">5%</span></label>
+                        <input type="range" id="mutation-rate" min="1" max="20" step="1" value="5">
+                    </div>
+                    
+                    <div class="slider-container">
+                        <label for="selection-pressure">Давление отбора: <span id="selection-value">Среднее</span></label>
+                        <input type="range" id="selection-pressure" min="1" max="3" step="1" value="2">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="evolution-canvas-container">
+                <canvas id="evolution-canvas" width="800" height="300"></canvas>
+                <div class="evolution-stats">
+                    <h4>Статистика популяции</h4>
+                    <div class="stats-grid">
+                        <div class="stat">
+                            <span class="stat-label">Поколение:</span>
+                            <span class="stat-value" id="generation">0</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Особи:</span>
+                            <span class="stat-value" id="population">0</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Сред. приспособленность:</span>
+                            <span class="stat-value" id="fitness">0%</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Лучшая приспособленность:</span>
+                            <span class="stat-value" id="best-fitness">0%</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Выживаемость:</span>
+                            <span class="stat-value" id="survival">0%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="biology-concepts">
+            <h3><i class="fas fa-microscope"></i> Биологические принципы</h3>
+            <div class="concepts-grid">
+                <div class="concept">
+                    <h4><i class="fas fa-dna"></i> Структура ДНК</h4>
+                    <p>Двойная спираль, состоящая из пар нуклеотидов A-T и C-G</p>
+                </div>
+                <div class="concept">
+                    <h4><i class="fas fa-random"></i> Мутации</h4>
+                    <p>Случайные изменения в ДНК, источник генетического разнообразия</p>
+                </div>
+                <div class="concept">
+                    <h4><i class="fas fa-leaf"></i> Естественный отбор</h4>
+                    <p>Выживание и размножение наиболее приспособленных особей</p>
+                </div>
+                <div class="concept">
+                    <h4><i class="fas fa-project-diagram"></i> Генетическое наследование</h4>
+                    <p>Передача генетической информации от родителей потомству</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+            <div class="back-to-home">
+                <a href="index.html" class="btn back-btn"><i class="fas fa-arrow-left"></i> Вернуться на главную</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Сайт "Великие ученые" &copy; 2024. Все права защищены.</p>
+            <p>Материалы сайта предназначены для образовательных целей.</p>
+            <div class="footer-links">
+                <a href="#"><i class="fab fa-github"></i> GitHub</a>
+                <a href="#"><i class="fas fa-envelope"></i> Контакты</a>
+                <a href="#"><i class="fas fa-info-circle"></i> О проекте</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Информация об ученом
+        function showScientist(scientistId) {
+            const scientists = {
+                darwin: {
+                    name: "Чарльз Дарвин",
+                    years: "1809-1882",
+                    country: "Великобритания",
+                    achievements: [
+                        "Создание теории эволюции путем естественного отбора",
+                        "Формулировка принципа 'выживания наиболее приспособленных'",
+                        "Исследование происхождения человека",
+                        "Фундаментальный труд 'Происхождение видов' (1859)"
+                    ],
+                    facts: [
+                        "Путешествовал на корабле 'Бигль' 5 лет (1831-1836)",
+                        "Изучал геологию, зоологию и ботанику во время путешествия",
+                        "Был женат на своей кузине Эмме Веджвуд",
+                        "Похоронен в Вестминстерском аббатстве рядом с Исааком Ньютоном",
+                        "Изначально готовился стать врачом, но не выносил вида крови"
+                    ],
+                    quote: "Чем больше мы познаем неизменные законы природы, тем все более невероятными становятся для нас чудеса."
+                },
+                mendel: {
+                    name: "Грегор Мендель",
+                    years: "1822-1884",
+                    country: "Австрийская империя",
+                    achievements: [
+                        "Открытие законов наследственности (законы Менделя)",
+                        "Заложение основ генетики как науки",
+                        "Эксперименты по гибридизации растений",
+                        "Введение понятий доминантных и рецессивных признаков"
+                    ],
+                    facts: [
+                        "Был августинским монахом и аббатом монастыря",
+                        "Проводил эксперименты с более чем 28,000 растений гороха",
+                        "Его работы не были признаны при жизни",
+                        "Законы Менделя переоткрыты в 1900 году тремя учеными независимо",
+                        "Имел также работы по метеорологии и пчеловодству"
+                    ],
+                    quote: "Мои научные работы принесли мне много удовлетворения, и я уверен, что не пройдет много времени, пока весь мир признает их значение."
+                },
+                franklin: {
+                    name: "Розалинд Франклин",
+                    years: "1920-1958",
+                    country: "Великобритания",
+                    achievements: [
+                        "Получение рентгенограммы ДНК (Фотография 51)",
+                        "Определение того, что ДНК имеет форму двойной спирали",
+                        "Исследование структуры вирусов, в том числе вируса табачной мозаики",
+                        "Изучение микроструктуры угля и графита"
+                    ],
+                    facts: [
+                        "Её данные использовались Уотсоном и Криком без её ведома",
+                        "Не получила Нобелевскую премию, так как умерла до её присуждения",
+                        "Была экспертом в рентгеноструктурном анализе",
+                        "Получила докторскую степень в Кембридже в 1945 году",
+                        "Работала в King's College London, где произошел конфликт с Уилкинсом"
+                    ],
+                    quote: "Наука и повседневная жизнь не могут и не должны быть разделены. Наука — для меня частичное объяснение жизни."
+                }
+            };
+
+            const scientist = scientists[scientistId];
+            if (!scientist) return;
+
+            // Создаем модальное окно с информацией об ученом
+            const modalHTML = `
+                <div class="modal" id="scientist-modal" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); display:flex; justify-content:center; align-items:center; z-index:2000;">
+                    <div style="background:white; border-radius:10px; padding:2rem; max-width:800px; width:90%; max-height:90vh; overflow-y:auto;">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem;">
+                            <h2 style="color:#2e7d32; margin:0;">${scientist.name}</h2>
+                            <button onclick="closeModal()" style="background:none; border:none; font-size:1.5rem; cursor:pointer; color:#666;">&times;</button>
+                        </div>
+                        
+                        <div style="display:grid; grid-template-columns:1fr 2fr; gap:2rem; margin-bottom:1.5rem;">
+                            <div>
+                                <div style="background:#e8f5e9; border-radius:8px; padding:1.5rem; text-align:center; height:100%; display:flex; flex-direction:column; justify-content:center;">
+                                    <i class="fas fa-user" style="font-size:4rem; color:#43a047; margin-bottom:1rem;"></i>
+                                    <h3 style="color:#2e7d32; margin-bottom:0.5rem;">${scientist.name}</h3>
+                                    <p><strong>Годы жизни:</strong> ${scientist.years}</p>
+                                    <p><strong>Страна:</strong> ${scientist.country}</p>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 style="color:#43a047; margin-bottom:0.8rem;">Основные достижения:</h3>
+                                <ul style="list-style-position:inside; margin-bottom:1.5rem;">
+                                    ${scientist.achievements.map(ach => `<li>${ach}</li>`).join('')}
+                                </ul>
+                                
+                                <h3 style="color:#43a047; margin-bottom:0.8rem;">Интересные факты:</h3>
+                                <ul style="list-style-position:inside; margin-bottom:1.5rem;">
+                                    ${scientist.facts.map(fact => `<li>${fact}</li>`).join('')}
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div style="background:#e8f5e9; padding:1.5rem; border-radius:8px; margin-top:1rem;">
+                            <i class="fas fa-quote-left" style="color:#43a047; margin-right:0.5rem;"></i>
+                            <em>${scientist.quote}</em>
+                        </div>
+                        
+                        <div style="text-align:center; margin-top:1.5rem;">
+                            <button onclick="closeModal()" class="btn" style="background-color:#43a047;">Закрыть</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            // Добавляем модальное окно в документ
+            const modalContainer = document.createElement('div');
+            modalContainer.innerHTML = modalHTML;
+            document.body.appendChild(modalContainer.firstChild);
+
+            // Добавляем функцию закрытия в глобальную область видимости
+            window.closeModal = function() {
+                const modal = document.getElementById('scientist-modal');
+                if (modal) {
+                    modal.remove();
+                }
+            };
+
+            // Закрытие по клику вне модального окна
+            document.getElementById('scientist-modal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeModal();
+                }
+            });
+        }
+    </script>
+    <script src="script.js"></script>
+    <script src="interactive.js"></script>
+</body>
+</html>

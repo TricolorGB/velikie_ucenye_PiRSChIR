@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Великие ученые в IT</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .it-theme {
+            --primary-color: #00695c;
+            --secondary-color: #00897b;
+            --accent-color: #b2dfdb;
+        }
+        .card-icon i {
+            background-color: #e0f2f1 !important;
+        }
+    </style>
+</head>
+<body class="it-theme">
+    <header>
+        <div class="container">
+            <h1><i class="fas fa-laptop-code"></i> Великие ученые в IT</h1>
+            <p>Пионеры цифровой эры и создатели современного мира технологий</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Главная</a></li>
+                <li><a href="math.html"><i class="fas fa-calculator"></i> Математика</a></li>
+                <li><a href="physics.html"><i class="fas fa-atom"></i> Физика</a></li>
+                <li><a href="it.html" class="active"><i class="fas fa-laptop-code"></i> Информационные технологии</a></li>
+                <li><a href="biology.html"><i class="fas fa-dna"></i> Биология</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+
+            <section class="intro">
+                <h2>Информационные технологии - двигатель современного прогресса</h2>
+                <p>От первых вычислительных машин до искусственного интеллекта - IT-ученые создали фундамент цифровой революции. Их работы изменили способы коммуникации, обработки информации и решения сложных задач.</p>
+            </section>
+
+            <div class="disciplines-grid">
+                <!-- Карточка ученого 1 -->
+                <div class="discipline-card">
+                    <div class="card-icon"> <i class="fas fa-computer"></i> </div>
+                    <h3>Алан Тьюринг</h3>
+                    <p>Математик, логик, криптограф, оказавший существенное влияние на развитие информатики. Отец современной компьютерной науки.</p>
+                    <div class="scientists-list">
+                        <h4>Основные достижения:</h4>
+                        <ul>
+                            <li>Машина Тьюринга</li>
+                            <li>Тест Тьюринга</li>
+                            <li>Расшифровка Enigma</li>
+                        </ul>
+                    </div>
+                    <a href="https://ru.wikipedia.org/wiki/%D0%A2%D1%8C%D1%8E%D1%80%D0%B8%D0%BD%D0%B3,_%D0%90%D0%BB%D0%B0%D0%BD" class="btn" onclick="showScientist('turing')">Подробнее <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Карточка ученого 2 -->
+                <div class="discipline-card">
+                    <div class="card-icon"> <i class="fas fa-globe"></i> </div>
+                    <h3>Тим Бернерс-Ли</h3>
+                    <p>Учёный, изобретатель URI, URL, HTTP, HTML и Всемирной паутины. Создатель первого в мире веб-браузера и веб-сервера.</p>
+                    <div class="scientists-list">
+                        <h4>Основные достижения:</h4>
+                        <ul>
+                            <li>Изобретение Всемирной паутины</li>
+                            <li>Создание HTML, HTTP, URL</li>
+                            <li>Первый веб-сервер и браузер</li>
+                        </ul>
+                    </div>
+                    <a href="https://ru.wikipedia.org/wiki/%D0%91%D0%B5%D1%80%D0%BD%D0%B5%D1%80%D1%81-%D0%9B%D0%B8,_%D0%A2%D0%B8%D0%BC" class="btn" onclick="showScientist('berners-lee')">Подробнее <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Карточка ученого 3 -->
+                <div class="discipline-card">
+                    <div class="card-icon"> <i class="fas fa-bug"></i> </div>
+                    <h3>Грейс Хоппер</h3>
+                    <p>Американский учёный и контр-адмирал флота США. Пионер в области программирования, разработчица первого компилятора.</p>
+                    <div class="scientists-list">
+                        <h4>Основные достижения:</h4>
+                        <ul>
+                            <li>Первый компилятор для компьютера</li>
+                            <li>Язык программирования COBOL</li>
+                            <li>Термин "debugging"</li>
+                        </ul>
+                    </div>
+                    <a href="https://ru.wikipedia.org/wiki/%D0%A5%D0%BE%D0%BF%D0%BF%D0%B5%D1%80,_%D0%93%D1%80%D0%B5%D0%B9%D1%81" class="btn" onclick="showScientist('hopper')">Подробнее <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Интерактивный раздел для IT -->
+<section class="interactive-section">
+    <h2><i class="fas fa-code"></i> IT-Лаборатория: Интерактивный редактор кода</h2>
+    <p>Напишите и выполните простой JavaScript код. Узнайте основы программирования на примере!</p>
+    
+    <div class="code-editor-container">
+        <div class="editor-header">
+            <h3><i class="fas fa-file-code"></i> Редактор кода</h3>
+            <div class="editor-actions">
+                <button id="run-code" class="btn"><i class="fas fa-play"></i> Выполнить код</button>
+                <button id="reset-code" class="btn"><i class="fas fa-redo"></i> Сбросить</button>
+                <button id="share-code" class="btn"><i class="fas fa-share"></i> Поделиться</button>
+            </div>
+        </div>
+        
+        <div class="editor-wrapper">
+            <div class="line-numbers">
+                <!-- Номера строк будут генерироваться JS -->
+            </div>
+            <textarea id="code-editor" spellcheck="false">
+// Добро пожаловать в IT-лабораторию!
+// Напишите здесь свой код на JavaScript
+
+function приветствие(имя) {
+    return "Привет, " + имя + "! Добро пожаловать в мир программирования!";
+}
+
+// Пример вычисления чисел Фибоначчи
+function fibonacci(n) {
+    if (n <= 1) return n;
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+// Выведем результат в консоль
+console.log(приветствие("Программист"));
+console.log("Первые 10 чисел Фибоначчи:");
+
+for (let i = 0; i < 10; i++) {
+    console.log("F(" + i + ") = " + fibonacci(i));
+}
+
+// Попробуйте изменить код и нажать "Выполнить код"!
+</textarea>
+
+        </div>
+        
+        <div class="output-container">
+            <div class="output-header">
+                <h3><i class="fas fa-terminal"></i> Результат выполнения</h3>
+                <button id="clear-output" class="btn"><i class="fas fa-broom"></i> Очистить</button>
+            </div>
+            <div id="code-output" class="code-output">
+                <p>Нажмите "Выполнить код", чтобы увидеть результат</p>
+            </div>
+        </div>
+        
+        <div class="code-examples">
+            <h3><i class="fas fa-lightbulb"></i> Примеры кода для экспериментов</h3>
+            <div class="example-buttons">
+                <button class="example-btn" data-example="fibonacci">Числа Фибоначчи</button>
+                <button class="example-btn" data-example="sorting">Сортировка массива</button>
+                <button class="example-btn" data-example="animation">Анимация</button>
+                <button class="example-btn" data-example="calculator">Калькулятор</button>
+                <button class="example-btn" data-example="game">Мини-игра</button>
+            </div>
+        </div>
+        
+        <div class="programming-concepts">
+            <h3><i class="fas fa-brain"></i> Основы программирования</h3>
+            <div class="concepts-grid">
+                <div class="concept">
+                    <h4><i class="fas fa-sitemap"></i> Алгоритмы</h4>
+                    <p>Последовательность шагов для решения задачи</p>
+                </div>
+                <div class="concept">
+                    <h4><i class="fas fa-code-branch"></i> Условия</h4>
+                    <p>Выполнение разных действий в зависимости от условий</p>
+                </div>
+                <div class="concept">
+                    <h4><i class="fas fa-redo"></i> Циклы</h4>
+                    <p>Повторение действий несколько раз</p>
+                </div>
+                <div class="concept">
+                    <h4><i class="fas fa-cube"></i> Функции</h4>
+                    <p>Переиспользуемые блоки кода</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+            <div class="back-to-home">
+                <a href="index.html" class="btn back-btn"><i class="fas fa-arrow-left"></i> Вернуться на главную</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Сайт "Великие ученые" &copy; 2024. Все права защищены.</p>
+            <p>Материалы сайта предназначены для образовательных целей.</p>
+            <div class="footer-links">
+                <a href="#"><i class="fab fa-github"></i> GitHub</a>
+                <a href="#"><i class="fas fa-envelope"></i> Контакты</a>
+                <a href="#"><i class="fas fa-info-circle"></i> О проекте</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Информация об ученом
+        function showScientist(scientistId) {
+            const scientists = {
+                turing: {
+                    name: "Алан Тьюринг",
+                    years: "1912-1954",
+                    country: "Великобритания",
+                    achievements: [
+                        "Создание абстрактной вычислительной машины Тьюринга",
+                        "Формализация понятий алгоритма и вычисления",
+                        "Разработка теста Тьюринга для искусственного интеллекта",
+                        "Ключевая роль в расшифровке немецкой шифровальной машины Enigma"
+                    ],
+                    facts: [
+                        "Работал в Блетчли-парке во время Второй мировой войны",
+                        "Его работы засекречены до 1970-х годов",
+                        "В его честь названа премия Тьюринга - аналог Нобелевской премии в IT",
+                        "Его жизнь показана в фильме 'Игра в имитацию'"
+                    ],
+                    quote: "Мы можем видеть лишь небольшое расстояние вперед, но уже там мы видим многое, что нужно сделать."
+                },
+                'berners-lee': {
+                    name: "Тим Бернерс-Ли",
+                    years: "р. 1955",
+                    country: "Великобритания",
+                    achievements: [
+                        "Изобретатель Всемирной паутины (World Wide Web)",
+                        "Создатель первого веб-браузера WorldWideWeb",
+                        "Разработка языка разметки HTML",
+                        "Создание первого веб-сервера и определение URL, HTTP"
+                    ],
+                    facts: [
+                        "Работал в ЦЕРНе, когда создавал WWW",
+                        "Основал Консорциум Всемирной паутины (W3C)",
+                        "Отказался патентовать свои изобретения",
+                        "Получил рыцарское звание в 2004 году",
+                        "В 2016 году получил Премию Тьюринга"
+                    ],
+                    quote: "Веб - это не просто технология, это средство общения людей. Машины не должны быть нашими хозяевами, а нашими партнерами."
+                },
+                hopper: {
+                    name: "Грейс Хоппер",
+                    years: "1906-1992",
+                    country: "США",
+                    achievements: [
+                        "Разработка первого компилятора для компьютера",
+                        "Создание языка программирования COBOL",
+                        "Внедрение термина 'debugging' (отладка)",
+                        "Популяризация идеи машинно-независимых языков программирования"
+                    ],
+                    facts: [
+                        "Имела звание контр-адмирала ВМС США",
+                        "Получила докторскую степень по математике в Йельском университете",
+                        "Работала на компьютере Harvard Mark I",
+                        "Найденный в компьютере мотылёк положил начало термину 'баг'",
+                        "В её честь назван эсминец USS Hopper и суперкомпьютер Cray XE6 'Hopper'"
+                    ],
+                    quote: "Лодка в безопасности у причала, но не для этого строят лодки. Плыви в открытое море и совершай открытия."
+                }
+            };
+
+            const scientist = scientists[scientistId];
+            if (!scientist) return;
+
+            // Создаем модальное окно с информацией об ученом
+            const modalHTML = `
+                <div class="modal" id="scientist-modal" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); display:flex; justify-content:center; align-items:center; z-index:2000;">
+                    <div style="background:white; border-radius:10px; padding:2rem; max-width:800px; width:90%; max-height:90vh; overflow-y:auto;">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem;">
+                            <h2 style="color:#00695c; margin:0;">${scientist.name}</h2>
+                            <button onclick="closeModal()" style="background:none; border:none; font-size:1.5rem; cursor:pointer; color:#666;">&times;</button>
+                        </div>
+                        
+                        <div style="display:grid; grid-template-columns:1fr 2fr; gap:2rem; margin-bottom:1.5rem;">
+                            <div>
+                                <div style="background:#e0f2f1; border-radius:8px; padding:1.5rem; text-align:center; height:100%; display:flex; flex-direction:column; justify-content:center;">
+                                    <i class="fas fa-user" style="font-size:4rem; color:#00897b; margin-bottom:1rem;"></i>
+                                    <h3 style="color:#00695c; margin-bottom:0.5rem;">${scientist.name}</h3>
+                                    <p><strong>Годы жизни:</strong> ${scientist.years}</p>
+                                    <p><strong>Страна:</strong> ${scientist.country}</p>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 style="color:#00897b; margin-bottom:0.8rem;">Основные достижения:</h3>
+                                <ul style="list-style-position:inside; margin-bottom:1.5rem;">
+                                    ${scientist.achievements.map(ach => `<li>${ach}</li>`).join('')}
+                                </ul>
+                                
+                                <h3 style="color:#00897b; margin-bottom:0.8rem;">Интересные факты:</h3>
+                                <ul style="list-style-position:inside; margin-bottom:1.5rem;">
+                                    ${scientist.facts.map(fact => `<li>${fact}</li>`).join('')}
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div style="background:#e0f2f1; padding:1.5rem; border-radius:8px; margin-top:1rem;">
+                            <i class="fas fa-quote-left" style="color:#00897b; margin-right:0.5rem;"></i>
+                            <em>${scientist.quote}</em>
+                        </div>
+                        
+                        <div style="text-align:center; margin-top:1.5rem;">
+                            <button onclick="closeModal()" class="btn" style="background-color:#00897b;">Закрыть</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            // Добавляем модальное окно в документ
+            const modalContainer = document.createElement('div');
+            modalContainer.innerHTML = modalHTML;
+            document.body.appendChild(modalContainer.firstChild);
+
+            // Добавляем функцию закрытия в глобальную область видимости
+            window.closeModal = function() {
+                const modal = document.getElementById('scientist-modal');
+                if (modal) {
+                    modal.remove();
+                }
+            };
+
+            // Закрытие по клику вне модального окна
+            document.getElementById('scientist-modal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeModal();
+                }
+            });
+        }
+    </script>
+    <script src="script.js"></script>
+    <script src="interactive.js"></script>
+</body>
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Великие физики</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .physics-theme {
+            --primary-color: #6a1b9a;
+            --secondary-color: #8e24aa;
+            --accent-color: #e1bee7;
+        }
+    </style>
+</head>
+<body class="physics-theme">
+    <header>
+        <div class="container">
+            <h1><i class="fas fa-atom"></i> Великие физики</h1>
+            <p>Гении, раскрывшие тайны Вселенной</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Главная</a></li>
+                <li><a href="math.html"><i class="fas fa-calculator"></i> Математика</a></li>
+                <li><a href="physics.html" class="active"><i class="fas fa-atom"></i> Физика</a></li>
+                <li><a href="it.html"><i class="fas fa-laptop-code"></i> Информационные технологии</a></li>
+                <li><a href="biology.html"><i class="fas fa-dna"></i> Биология</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+
+            <section class="intro">
+                <h2>Физика - фундаментальная наука о природе</h2>
+                <p>Физика изучает фундаментальные законы природы, строение материи и энергии. Великие физики своими открытиями не только расширили границы человеческого познания, но и заложили основы для технологического прогресса всего человечества.</p>
+            </section>
+
+            <div class="disciplines-grid">
+                <!-- Карточка ученого 1 -->
+                <div class="discipline-card">
+                    <div class="card-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Альберт Эйнштейн</h3>
+                    <p>Физик-теоретик, создатель теории относительности, один из основателей современной теоретической физики, лауреат Нобелевской премии.</p>
+                    <div class="scientists-list">
+                        <h4>Основные достижения:</h4>
+                        <ul>
+                            <li>Теория относительности</li>
+                            <li>Фотоэлектрический эффект</li>
+                            <li>Уравнение E=mc²</li>
+                        </ul>
+                    </div>
+                    <a href="https://ru.wikipedia.org/wiki/%D0%AD%D0%B9%D0%BD%D1%88%D1%82%D0%B5%D0%B9%D0%BD,_%D0%90%D0%BB%D1%8C%D0%B1%D0%B5%D1%80%D1%82" class="btn" onclick="showScientist('einstein')">Подробнее <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Карточка ученого 2 -->
+                <div class="discipline-card">
+                    <div class="card-icon">
+                        <i class="fas fa-radiation"></i>
+                    </div>
+                    <h3>Мария Кюри</h3>
+                    <p>Физик и химик, первая женщина-лауреат Нобелевской премии, единственная женщина, получившая Нобелевскую премию дважды.</p>
+                    <div class="scientists-list">
+                        <h4>Основные достижения:</h4>
+                        <ul>
+                            <li>Исследование радиоактивности</li>
+                            <li>Открытие полония и радия</li>
+                            <li>Развитие рентгенологии</li>
+                        </ul>
+                    </div>
+                    <a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%BA%D0%BB%D0%BE%D0%B4%D0%BE%D0%B2%D1%81%D0%BA%D0%B0%D1%8F-%D0%9A%D1%8E%D1%80%D0%B8,_%D0%9C%D0%B0%D1%80%D0%B8%D1%8F" class="btn" onclick="showScientist('curie')">Подробнее <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Карточка ученого 3 -->
+                <div class="discipline-card">
+                    <div class="card-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Никола Тесла</h3>
+                    <p>Изобретатель в области электротехники и радиотехники, инженер, физик. Родился в Австрийской империи, работал во Франции и США.</p>
+                    <div class="scientists-list">
+                        <h4>Основные достижения:</h4>
+                        <ul>
+                            <li>Переменный ток</li>
+                            <li>Катушка Теслы</li>
+                            <li>Беспроводная передача энергии</li>
+                        </ul>
+                    </div>
+                    <a href="https://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D1%81%D0%BB%D0%B0,_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0" class="btn" onclick="showScientist('tesla')">Подробнее <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <!-- Интерактивный раздел для физики -->
+<section class="interactive-section">
+    <h2><i class="fas fa-star"></i> Лаборатория физики: Симулятор гравитации</h2>
+    <p>Изучите основы гравитации и движения частиц. Нажмите на поле ниже, чтобы создать частицы, и наблюдайте за их взаимодействием!</p>
+    
+    <div class="simulator-container">
+        <div class="simulator-controls">
+            <button id="add-particle" class="btn"><i class="fas fa-plus-circle"></i> Добавить частицу</button>
+            <button id="clear-particles" class="btn"><i class="fas fa-trash"></i> Очистить</button>
+            <button id="gravity-on" class="btn"><i class="fas fa-magnet"></i> Включить гравитацию</button>
+            <button id="gravity-off" class="btn"><i class="fas fa-ban"></i> Выключить гравитацию</button>
+            <div class="slider-container">
+                <label for="gravity-slider">Сила гравитации: <span id="gravity-value">0.5</span></label>
+                <input type="range" id="gravity-slider" min="0" max="1" step="0.1" value="0.5">
+            </div>
+        </div>
+        
+        <div class="particle-field" id="particle-field">
+            <div class="gravity-center">
+                <i class="fas fa-sun"></i>
+            </div>
+            <div class="instructions">
+                <p>Кликните в любом месте поля для создания частицы</p>
+                <p>Частицы притягиваются к центру под действием гравитации</p>
+            </div>
+        </div>
+        
+        <div class="physics-info">
+            <h3><i class="fas fa-info-circle"></i> Физические принципы</h3>
+            <p>Этот симулятор демонстрирует:</p>
+            <ul>
+                <li><strong>Закон всемирного тяготения Ньютона</strong> - все тела притягиваются друг к другу</li>
+                <li><strong>Инерцию</strong> - частицы продолжают движение без внешних сил</li>
+                <li><strong>Сохранение энергии</strong> - энергия переходит из кинетической в потенциальную</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+            <div class="back-to-home">
+                <a href="index.html" class="btn back-btn"><i class="fas fa-arrow-left"></i> Вернуться на главную</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Сайт "Великие ученые" &copy; 2024. Все права защищены.</p>
+            <p>Материалы сайта предназначены для образовательных целей.</p>
+            <div class="footer-links">
+                <a href="#"><i class="fab fa-github"></i> GitHub</a>
+                <a href="#"><i class="fas fa-envelope"></i> Контакты</a>
+                <a href="#"><i class="fas fa-info-circle"></i> О проекте</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Информация об ученом
+        function showScientist(scientistId) {
+            const scientists = {
+                einstein: {
+                    name: "Альберт Эйнштейн",
+                    years: "1879-1955",
+                    country: "Германия, Швейцария, США",
+                    achievements: [
+                        "Создатель специальной и общей теории относительности",
+                        "Объяснение фотоэлектрического эффекта",
+                        "Формулировка уравнения E=mc²",
+                        "Развитие квантовой теории"
+                    ],
+                    facts: [
+                        "Нобелевская премия по физике 1921 года",
+                        "Работал патентным экспертом до академической карьеры",
+                        "Предсказал гравитационные волны",
+                        "Был пацифистом и выступал против нацизма"
+                    ],
+                    quote: "Воображение важнее знания. Знание ограничено, тогда как воображение охватывает целый мир."
+                },
+                curie: {
+                    name: "Мария Кюри",
+                    years: "1867-1934",
+                    country: "Польша, Франция",
+                    achievements: [
+                        "Пионер в исследовании радиоактивности",
+                        "Открытие элементов полоний и радий",
+                        "Разработка методов разделения радиоактивных изотопов",
+                        "Создание мобильных рентгеновских установок для полевых госпиталей"
+                    ],
+                    facts: [
+                        "Первая женщина-профессор в Сорбонне",
+                        "Первая женщина - лауреат Нобелевской премии",
+                        "Единственная женщина, получившая Нобелевскую премию дважды",
+                        "Её записные книжки до сих пор радиоактивны"
+                    ],
+                    quote: "В жизни нет ничего такого, чего нужно бояться, есть только то, что нужно понять."
+                },
+                tesla: {
+                    name: "Никола Тесла",
+                    years: "1856-1943",
+                    country: "Австрийская империя, США",
+                    achievements: [
+                        "Разработка системы переменного тока",
+                        "Изобретение катушки Теслы",
+                        "Исследования беспроводной передачи энергии",
+                        "Вклад в развитие радиотехники и телеуправления"
+                    ],
+                    facts: [
+                        "Имел более 300 патентов по всему миру",
+                        "Работал с Томасом Эдисоном, но затем стали конкурентами",
+                        "Предсказал появление смартфонов и беспроводных технологий",
+                        "Имел фотографическую память и говорил на 8 языках"
+                    ],
+                    quote: "Наука — это лишь perversion самого себя, если не имеет как своей конечной цели улучшение условий человеческого существования."
+                }
+            };
+
+            const scientist = scientists[scientistId];
+            if (!scientist) return;
+
+            // Создаем модальное окно с информацией об ученом
+            const modalHTML = `
+                <div class="modal" id="scientist-modal" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); display:flex; justify-content:center; align-items:center; z-index:2000;">
+                    <div style="background:white; border-radius:10px; padding:2rem; max-width:800px; width:90%; max-height:90vh; overflow-y:auto;">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem;">
+                            <h2 style="color:#6a1b9a; margin:0;">${scientist.name}</h2>
+                            <button onclick="closeModal()" style="background:none; border:none; font-size:1.5rem; cursor:pointer; color:#666;">&times;</button>
+                        </div>
+                        
+                        <div style="display:grid; grid-template-columns:1fr 2fr; gap:2rem; margin-bottom:1.5rem;">
+                            <div>
+                                <div style="background:#f3e5f5; border-radius:8px; padding:1.5rem; text-align:center; height:100%; display:flex; flex-direction:column; justify-content:center;">
+                                    <i class="fas fa-user" style="font-size:4rem; color:#8e24aa; margin-bottom:1rem;"></i>
+                                    <h3 style="color:#6a1b9a; margin-bottom:0.5rem;">${scientist.name}</h3>
+                                    <p><strong>Годы жизни:</strong> ${scientist.years}</p>
+                                    <p><strong>Страна:</strong> ${scientist.country}</p>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 style="color:#8e24aa; margin-bottom:0.8rem;">Основные достижения:</h3>
+                                <ul style="list-style-position:inside; margin-bottom:1.5rem;">
+                                    ${scientist.achievements.map(ach => `<li>${ach}</li>`).join('')}
+                                </ul>
+                                
+                                <h3 style="color:#8e24aa; margin-bottom:0.8rem;">Интересные факты:</h3>
+                                <ul style="list-style-position:inside; margin-bottom:1.5rem;">
+                                    ${scientist.facts.map(fact => `<li>${fact}</li>`).join('')}
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div style="background:#f3e5f5; padding:1.5rem; border-radius:8px; margin-top:1rem;">
+                            <i class="fas fa-quote-left" style="color:#8e24aa; margin-right:0.5rem;"></i>
+                            <em>${scientist.quote}</em>
+                        </div>
+                        
+                        <div style="text-align:center; margin-top:1.5rem;">
+                            <button onclick="closeModal()" class="btn" style="background-color:#8e24aa;">Закрыть</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            // Добавляем модальное окно в документ
+            const modalContainer = document.createElement('div');
+            modalContainer.innerHTML = modalHTML;
+            document.body.appendChild(modalContainer.firstChild);
+
+            // Добавляем функцию закрытия в глобальную область видимости
+            window.closeModal = function() {
+                const modal = document.getElementById('scientist-modal');
+                if (modal) {
+                    modal.remove();
+                }
+            };
+
+            // Закрытие по клику вне модального окна
+            document.getElementById('scientist-modal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeModal();
+                }
+            });
+        }
+    </script>
+    <script src="script.js"></script>
+    <script src="interactive.js"></script>
+</body>
+</html>

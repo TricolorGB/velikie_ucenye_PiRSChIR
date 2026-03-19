@@ -1,0 +1,1176 @@
+/* ============================================
+   ОСНОВНЫЕ СТИЛИ И СБРОС
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    background-color: #f8f9fa;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ============================================
+   ЦВЕТОВЫЕ ПЕРЕМЕННЫЕ ДЛЯ ТЕМ
+   ============================================ */
+
+:root {
+    /* ОСНОВНАЯ ТЕМА (Математика) - СИНЯЯ */
+    --primary-color: #1a237e;
+    --secondary-color: #3949ab;
+    --accent-color: #4fc3f7;
+    --text-color: #333333;
+    --text-light: #666666;
+    --text-on-dark: #ffffff;
+    --text-on-dark-hover: #ffffff;  /* Цвет текста при наведении в навигации */
+    --bg-color: #f8f9fa;
+    --card-bg: #ffffff;
+    --quote-bg: #e3f2fd;
+    --border-color: #e0e0e0;
+    --shadow-color: rgba(26, 35, 126, 0.1);
+    --header-gradient: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+    --footer-gradient: linear-gradient(135deg, #0d47a1 0%, #1a237e 100%);
+}
+
+/* ГЛАВНАЯ СТРАНИЦА - ЗОЛОТАЯ ТЕМА */
+.home-theme {
+    --primary-color: #83785e;
+    --secondary-color: #a19679;
+    --accent-color: #d8ce97;
+    --text-color: #333333;
+    --text-light: #666666;
+    --text-on-dark: #ffffff;
+    --text-on-dark-hover: #fff9e6;
+    --bg-color: #fffef5;
+    --card-bg: #ffffff;
+    --quote-bg: #fff9e6;
+    --border-color: #f0e6d2;
+    --shadow-color: rgba(184, 134, 11, 0.1);
+    --header-gradient: linear-gradient(135deg, #5c523a 0%, #4b4128 100%);
+    --footer-gradient: linear-gradient(135deg, #5c523a 0%, #4b4128 100%);
+}
+
+/* МАТЕМАТИКА (без класса) */
+body:not(.physics-theme):not(.it-theme):not(.biology-theme):not(.home-theme) {
+    --primary-color: #1a237e;
+    --secondary-color: #3949ab;
+    --accent-color: #97a7ff;
+    --text-color: #333333;
+    --text-light: #666666;
+    --text-on-dark: #ffffff;
+    --bg-color: #f8f9fa;
+    --card-bg: #ffffff;
+    --quote-bg: #e3e9fd;
+    --border-color: #e0e0e0;
+    --shadow-color: rgba(26, 35, 126, 0.1);
+    --header-gradient: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+    --footer-gradient: linear-gradient(135deg, #0d47a1 0%, #1a237e 100%);
+}
+
+/* ФИЗИКА - ФИОЛЕТОВАЯ ТЕМА */
+.physics-theme {
+    --primary-color: #6a1b9a;
+    --secondary-color: #8e24aa;
+    --accent-color: #e1bee7;
+    --text-color: #4a148c;
+    --text-light: #7b1fa2;
+    --text-on-dark: #ffffff;
+    --text-on-dark-hover: #f3e5f5;
+    --bg-color: #f9f7fa;
+    --card-bg: #ffffff;
+    --quote-bg: #f3e5f5;
+    --border-color: #e1bee7;
+    --shadow-color: rgba(106, 27, 154, 0.1);
+    --header-gradient: linear-gradient(135deg, #6a1b9a 0%, #8e24aa 100%);
+    --footer-gradient: linear-gradient(135deg, #4a148c 0%, #6a1b9a 100%);
+}
+
+/* IT - БИРЮЗОВАЯ ТЕМА */
+.it-theme {
+    --primary-color: #00695c;
+    --secondary-color: #00897b;
+    --accent-color: #b2dfdb;
+    --text-color: #004d40;
+    --text-light: #00796b;
+    --text-on-dark: #ffffff;
+    --text-on-dark-hover: #e0f2f1;
+    --bg-color: #f5f9f8;
+    --card-bg: #ffffff;
+    --quote-bg: #e0f2f1;
+    --border-color: #b2dfdb;
+    --shadow-color: rgba(0, 105, 92, 0.1);
+    --header-gradient: linear-gradient(135deg, #00695c 0%, #00897b 100%);
+    --footer-gradient: linear-gradient(135deg, #004d40 0%, #00695c 100%);
+}
+
+/* БИОЛОГИЯ - ЗЕЛЕНАЯ ТЕМА */
+.biology-theme {
+    --primary-color: #2e7d32;
+    --secondary-color: #43a047;
+    --accent-color: #c8e6c9;
+    --text-color: #1b5e20;
+    --text-light: #388e3c;
+    --text-on-dark: #ffffff;
+    --text-on-dark-hover: #e8f5e9;
+    --bg-color: #f8faf8;
+    --card-bg: #ffffff;
+    --quote-bg: #e8f5e9;
+    --border-color: #c8e6c9;
+    --shadow-color: rgba(46, 125, 50, 0.1);
+    --header-gradient: linear-gradient(135deg, #2e7d32 0%, #43a047 100%);
+    --footer-gradient: linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%);
+}
+
+/* ============================================
+   ПРИМЕНЕНИЕ ЦВЕТОВЫХ ПЕРЕМЕННЫХ
+   ============================================ */
+
+body {
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+/* Шапка */
+header {
+    background: var(--header-gradient);
+    color: var(--text-on-dark);
+    padding: 2rem 0;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+header i {
+    margin-right: 10px;
+    color: var(--accent-color);
+}
+
+/* Навигация */
+nav {
+    background-color: var(--secondary-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+nav a {
+    display: block;
+    color: var(--text-on-dark);
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+nav a:hover,
+nav a.active {
+    background-color: var(--primary-color);
+    border-bottom: 3px solid var(--accent-color);
+    color: var(--text-on-dark-hover);
+}
+
+/* Основной контент */
+main {
+    padding: 2rem 0;
+}
+
+.intro {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.intro h2,
+.disciplines h2,
+.scientist-header h1,
+.scientist-info h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.disciplines h2 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.intro p {
+    color: var(--text-color);
+}
+
+/* Карточки дисциплин */
+.disciplines-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.discipline-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.discipline-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card-icon {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.card-icon i {
+    font-size: 3rem;
+    color: var(--secondary-color);
+    background-color: var(--quote-bg);
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.discipline-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.8rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.discipline-card p {
+    margin-bottom: 1.2rem;
+    color: var(--text-color);
+    flex-grow: 1;
+}
+
+.scientists-list {
+    background-color: var(--bg-color);
+    border-left: 3px solid var(--accent-color);
+    padding: 1rem;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+}
+
+.scientists-list h4 {
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.scientists-list ul {
+    list-style-position: inside;
+    color: var(--text-light);
+}
+
+.scientists-list li {
+    margin-bottom: 0.3rem;
+    font-size: 0.9rem;
+}
+
+/* Кнопки */
+.btn {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: var(--text-on-dark);
+    padding: 0.7rem 1.5rem;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    margin-top: auto;
+}
+
+.btn:hover {
+    background-color: var(--primary-color);
+    color: var(--accent-color);
+}
+
+.btn i {
+    margin-left: 5px;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-top: 1.5rem;
+}
+
+/* Цитата */
+.quote-section {
+    background-color: var(--quote-bg);
+    padding: 2.5rem;
+    border-radius: 10px;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.quote {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.quote i:first-child {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.quote p {
+    font-size: 1.3rem;
+    font-style: italic;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.quote-author {
+    font-weight: 600;
+    font-style: normal;
+    color: var(--secondary-color);
+}
+
+/* Футер */
+footer {
+    background: var(--footer-gradient);
+    color: var(--text-on-dark);
+    padding: 2rem 0;
+    text-align: center;
+    margin-top: 3rem;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+}
+
+.footer-links {
+    margin-top: 1.5rem;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    margin: 0 1rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.footer-links i {
+    margin-right: 5px;
+}
+
+/* Стили для страниц ученых */
+.scientist-header {
+    background: var(--header-gradient);
+    color: var(--text-on-dark);
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+    border-radius: 0 0 10px 10px;
+}
+
+.scientist-header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.scientist-header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.scientist-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.scientist-info {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+.scientist-info h2 {
+    border-bottom: 2px solid var(--quote-bg);
+    padding-bottom: 0.5rem;
+}
+
+.scientist-info h3 {
+    color: var(--secondary-color);
+    margin: 1.5rem 0 0.8rem;
+}
+
+.scientist-facts ul {
+    list-style-position: inside;
+    margin-left: 1rem;
+}
+
+.scientist-facts li {
+    margin-bottom: 0.5rem;
+}
+
+/* Дополнительные стили для главной страницы */
+.home-theme .discipline-card {
+    position: relative;
+    overflow: hidden;
+    /*border-top: 4px solid var(--accent-color);*/
+}
+
+.home-theme .discipline-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, 
+        var(--primary-color) 0%, 
+        var(--accent-color) 50%, 
+        var(--primary-color) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.home-theme .discipline-card:hover::before {
+    opacity: 1;
+}
+
+.home-theme .card-icon i {
+    background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+    color: white;
+    box-shadow: 0 4px 15px rgba(218, 165, 32, 0.3);
+    transition: all 0.3s ease;
+}
+
+.home-theme .discipline-card:hover .card-icon i {
+    transform: scale(1.1) rotate(10deg);
+    box-shadow: 0 6px 20px rgba(218, 165, 32, 0.5);
+}
+
+.home-theme .scientists-list {
+    background: linear-gradient(to right, var(--quote-bg), transparent);
+    border-left: 4px solid var(--accent-color);
+}
+
+.home-theme .quote-section {
+    background: linear-gradient(135deg, var(--quote-bg) 0%, #fff9e6 100%);
+    border: 2px solid transparent;
+    border-image: linear-gradient(135deg, var(--primary-color), var(--accent-color)) 1;
+    position: relative;
+}
+
+.home-theme .btn {
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.home-theme .btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+    z-index: -1;
+}
+
+.home-theme .btn:hover::before {
+    left: 100%;
+}
+
+/*.home-theme .footer-links a {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.home-theme .footer-links a:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: var(--accent-color);
+} */
+
+@keyframes sparkle {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* Общие анимации и переходы */
+body,
+header,
+nav,
+footer,
+.btn,
+.discipline-card,
+.scientist-info,
+.quote-section,
+.card-icon i {
+    transition: background-color 0.5s ease, 
+                background 0.5s ease, 
+                color 0.5s ease,
+                border-color 0.5s ease,
+                box-shadow 0.5s ease;
+}
+
+/* Ссылки */
+a {
+    color: var(--secondary-color);
+}
+
+a:hover {
+    color: var(--primary-color);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav a {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .disciplines-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .quote p {
+        font-size: 1.1rem;
+    }
+    
+    .scientist-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================
+   СТИЛИ ДЛЯ ИНТЕРАКТИВНЫХ ЭЛЕМЕНТОВ
+   ============================================ */
+
+.interactive-section {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 3rem 0;
+    box-shadow: 0 8px 25px var(--shadow-color);
+    border: 1px solid var(--border-color);
+}
+
+.interactive-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+.interactive-section h2 i {
+    color: var(--accent-color);
+}
+
+/* Стили для физики - симулятор гравитации */
+.simulator-container {
+    margin-top: 1.5rem;
+}
+
+.simulator-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.slider-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-width: 200px;
+}
+
+.slider-container label {
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.slider-container input[type="range"] {
+    width: 100%;
+    height: 8px;
+    border-radius: 4px;
+    background: var(--bg-color);
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.slider-container input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--secondary-color);
+    cursor: pointer;
+}
+
+.particle-field {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(135deg, var(--bg-color) 0%, var(--card-bg) 100%);
+    border-radius: 8px;
+    border: 2px dashed var(--border-color);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+}
+
+.gravity-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle, #ff9800, #ff5722);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 30px rgba(255, 87, 34, 0.5);
+    z-index: 1;
+}
+
+.gravity-center i {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.instructions {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.particle {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--accent-color), var(--secondary-color));
+    cursor: pointer;
+    transition: transform 0.2s;
+    z-index: 2;
+}
+
+.particle:hover {
+    transform: scale(1.2);
+}
+
+.physics-info {
+    background-color: var(--quote-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+}
+
+.physics-info h3 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Стили для математики - графический калькулятор */
+.calculator-container {
+    margin-top: 1.5rem;
+}
+
+.calculator-controls {
+    background-color: var(--bg-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.input-group label {
+    color: var(--secondary-color);
+    font-weight: 600;
+    min-width: 120px;
+}
+
+.input-group input {
+    flex: 1;
+    min-width: 200px;
+    padding: 0.7rem 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    font-family: 'Courier New', monospace;
+}
+
+.function-presets {
+    margin-bottom: 1.5rem;
+}
+
+.function-presets p {
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+}
+
+.preset-btn {
+    background-color: var(--bg-color);
+    color: var(--secondary-color);
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s;
+}
+
+.preset-btn:hover {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.graph-controls {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.graph-container {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+#math-graph {
+    width: 100%;
+    height: 400px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    display: block;
+}
+
+.graph-info {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    border-left: 4px solid var(--secondary-color);
+    max-width: 300px;
+}
+
+.math-info {
+    background-color: var(--quote-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+/* Стили для IT - редактор кода */
+.code-editor-container {
+    margin-top: 1.5rem;
+}
+
+.editor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.editor-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.editor-wrapper {
+    position: relative;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.line-numbers {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 40px;
+    background-color: var(--bg-color);
+    color: var(--text-light);
+    font-family: 'Courier New', monospace;
+    padding: 10px 5px;
+    text-align: right;
+    border-right: 1px solid var(--border-color);
+    line-height: 1.5;
+    overflow: hidden;
+}
+
+#code-editor {
+    width: 100%;
+    min-height: 300px;
+    padding: 10px 10px 10px 55px;
+    border: none;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    resize: vertical;
+    outline: none;
+    white-space: pre;
+}
+
+.output-container {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+.output-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    background-color: var(--bg-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.code-output {
+    min-height: 150px;
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 1rem;
+    background-color: var(--card-bg);
+    font-family: 'Courier New', monospace;
+    line-height: 1.5;
+}
+
+.code-examples {
+    margin-bottom: 1.5rem;
+}
+
+.example-buttons {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+}
+
+.example-btn {
+    background-color: var(--bg-color);
+    color: var(--secondary-color);
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.example-btn:hover {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.programming-concepts {
+    background-color: var(--quote-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.concepts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.concept {
+    background-color: var(--card-bg);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.concept h4 {
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Стили для биологии - ДНК и эволюция */
+.biology-lab-container {
+    margin-top: 1.5rem;
+}
+
+.dna-section, .evolution-section {
+    background-color: var(--bg-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.nucleotide-buttons {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.nuc-btn {
+    background-color: var(--card-bg);
+    color: var(--secondary-color);
+    border: 2px solid var(--border-color);
+    padding: 0.7rem 1.2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.nuc-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+.nuc-btn[data-nucleotide="A"] {
+    color: #e91e63;
+    border-color: #e91e63;
+}
+
+.nuc-btn[data-nucleotide="T"] {
+    color: #2196f3;
+    border-color: #2196f3;
+}
+
+.nuc-btn[data-nucleotide="C"] {
+    color: #4caf50;
+    border-color: #4caf50;
+}
+
+.nuc-btn[data-nucleotide="G"] {
+    color: #ff9800;
+    border-color: #ff9800;
+}
+
+.dna-sequence-display {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    min-height: 100px;
+}
+
+.dna-strand {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 1rem;
+}
+
+.nucleotide {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.nucleotide.A { background-color: rgba(233, 30, 99, 0.2); color: #e91e63; }
+.nucleotide.T { background-color: rgba(33, 150, 243, 0.2); color: #2196f3; }
+.nucleotide.C { background-color: rgba(76, 175, 80, 0.2); color: #4caf50; }
+.nucleotide.G { background-color: rgba(255, 152, 0, 0.2); color: #ff9800; }
+
+.dna-info {
+    display: flex;
+    gap: 2rem;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.dna-visualization {
+    margin-top: 1.5rem;
+}
+
+#dna-canvas {
+    width: 100%;
+    height: 200px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    display: block;
+}
+
+.evolution-controls {
+    margin-bottom: 1.5rem;
+}
+
+.evolution-params {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.evolution-canvas-container {
+    position: relative;
+}
+
+#evolution-canvas {
+    width: 100%;
+    height: 300px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    display: block;
+}
+
+.evolution-stats {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 1rem;
+    border-radius: 8px;
+    min-width: 200px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+}
+
+.stat {
+    display: flex;
+    justify-content: space-between;
+}
+
+.stat-label {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.stat-value {
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+.biology-concepts {
+    background-color: var(--quote-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+/* Адаптивность для интерактивных элементов */
+@media (max-width: 768px) {
+    .simulator-controls,
+    .editor-actions,
+    .nucleotide-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .input-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .concepts-grid,
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .graph-controls,
+    .evolution-params {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
