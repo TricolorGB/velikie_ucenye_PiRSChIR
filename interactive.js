@@ -838,7 +838,6 @@ function initBiologySimulator() {
             updateStats();
         }
         
-        // Естественный отбор - теперь реально работает!
         function naturalSelection() {
             // Удаляем мертвых существ
             creatures = creatures.filter(c => c.alive);
